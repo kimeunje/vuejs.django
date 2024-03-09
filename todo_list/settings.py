@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-p#zm(_e20=ab%i391j=_2g4rit#r$**e26ndq&okkt9k1v@$d2
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['34.22.93.164', '127.0.0.1']
+ALLOWED_HOSTS = ['todo-list.site', '127.0.0.1']
 
 
 # Application definition
