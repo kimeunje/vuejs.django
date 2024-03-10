@@ -9,7 +9,10 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Pen+Script&display=swap"
+          rel="stylesheet">
+{#    <link rel="stylesheet" href="/static/css/reset.css">#}
+
     <style>
         body {
             background-color: #FAFAFA;
@@ -19,12 +22,40 @@
             padding-top: 50px;
         }
 
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: "Nanum Gothic", sans-serif;
+        }
+
         .container {
             max-width: 550px;
             margin: auto;
             background-color: #fff;
             -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
             box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            background: linear-gradient(90deg, #EEA390 0%, #EB796F 43%, #EB796F 100%);
+        }
+
+        .header-bar button {
+            width: 70px;
+            margin: 2px;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            background-color: #EB796F;
         }
 
         .nanum-pen script-regular {
@@ -36,10 +67,10 @@
 </head>
 <body>
 
-    <div class="container">
-        {% block content %}
+<div class="container">
+    {% block content %}
 
-        {% endblock %}
-    </div>
+    {% endblock %}
+</div>
 </body>
 </html>

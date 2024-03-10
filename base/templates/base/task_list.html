@@ -1,15 +1,28 @@
 {% extends 'base/main.html' %}
 
 {% block content %}
-    {% if request.user.is_authenticated %}
-        <p>{{ request.user }}</p>
+
+    <div class="header-bar">
+        <div>
+            <h1>안녕하세요. {{ request.user|title }}</h1>
+            <h3 style="margin:0">
+                {% if count == 0 %}
+                작업을 추가해주세요.
+                {% else %}
+                <i>{{ count }}개의 작업{{ count|pluralize:"이,들이" }} 남았습니다.</i>
+                {% endif %}
+            </h3>
+        </div>
+        {% if request.user.is_authenticated %}
         <form method="post" action="{% url 'logout' %}">
             {% csrf_token %}
-            <button type="submit">logout</button>
+            <button type="submit">로그아웃</button>
         </form>
-    {% else %}
-        <a href="{% url 'login' %}">Login</a>
-    {% endif %}
+        {% else %}
+        <a href="{% url 'login' %}">로그인</a>
+        {% endif %}
+    </div>
+
 
     <hr>
     <h1>My To Do List</h1>
@@ -17,8 +30,8 @@
     <a href="{% url 'task-create' %}">Add Task</a>
 
     <form method="GET">
-        <input type="text" name="search-area" value="{{ search_input }}" />
-        <input type="submit" value="Search" />
+        <input type="text" name="search-area" value="{{ search_input }}"/>
+        <input type="submit" value="Search"/>
     </form>
 
     <table>
@@ -39,5 +52,6 @@
             <h3>No items in list</h3>
         {% endfor %}
     </table>
+
 {% endblock content %}
 
