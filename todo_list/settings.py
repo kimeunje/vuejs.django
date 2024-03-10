@@ -89,10 +89,10 @@ CORS_ALLOWED_ORIGINS = [
     # "http://todo-list.site",
 ]
 
-WHITENOISE_USE_FINDERS = True
-WHITENOISE_MANIFEST_STRICT = False
-WHITENOISE_ALLOW_ALL_ORIGINS = True
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedStaticFilesStorage'
+# WHITENOISE_USE_FINDERS = True
+# WHITENOISE_MANIFEST_STRICT = False
+# WHITENOISE_ALLOW_ALL_ORIGINS = True
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 # Database
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
@@ -153,8 +153,9 @@ LOGIN_URL = 'login'
 
 # The absolute path to the directory where collectstatic will collect static files for deployment.
 # STATIC_ROOT = BASE_DIR / 'staticfiles'# The URL to use when referring to static files (where they will be served from)
-STATIC_ROOT = '/var/www/todolist/static/'
-STATIC_URL = 'static/'
+# STATIC_ROOT = '/var/www/todolist/static/'
+# STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
