@@ -17,8 +17,6 @@
         body {
             background-color: #FAFAFA;
             font-family: "Nanum Pen Script", cursive;
-            font-weight: 400;
-            font-style: normal;
             padding-top: 50px;
         }
 
@@ -29,6 +27,11 @@
         h5,
         h6 {
             font-family: "Nanum Gothic", sans-serif;
+        }
+
+        a,
+        p {
+            color: #4b5156
         }
 
         .container {
@@ -58,10 +61,50 @@
             background-color: #EB796F;
         }
 
-        .nanum-pen script-regular {
-            font-family: "Nanum Pen Script", cursive;
-            font-weight: 400;
-            font-style: normal;
+        .task-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            {#padding: 20px;#}
+            background-color: #fff;
+            border-top: 1px solid rgb(226, 226, 226);
+        }
+
+        .task-title {
+            display: flex;
+            padding: 20px;
+            font-size: 30px;
+        }
+
+        .task-title a {
+            text-decoration: none;
+            color: #4b5156;
+            margin-left: 10px;
+        }
+
+        .task-complete-icon {
+            margin-top: 7px;
+            height: 20px;
+            width: 20px;
+            background-color: rgb(105, 192, 105);
+            border-radius: 50%;
+        }
+
+        .task-incomplete-icon {
+            margin-top: 7px;
+            height: 20px;
+            width: 20px;
+            background-color: rgb(218, 218, 218);
+            border-radius: 50%;
+        }
+
+        .delete-link {
+            text-decoration: none;
+            font-weight: 900;
+            color: #cf4949;
+            font-size: 40px;
+            line-height: 0;
+            padding: 20px 20px;
         }
     </style>
 </head>
