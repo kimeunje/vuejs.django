@@ -6,7 +6,18 @@ from django.views.generic.edit import UpdateView
 from django.views.generic.edit import DeleteView
 from django.urls import reverse_lazy
 
+from django.contrib.auth.views import LoginView
+
 from .models import Task
+
+
+class CustomLoginView(LoginView):
+    template_name = 'base/login.html'
+    fields = '__all__'
+    redirect_authenticated_user = True
+
+    def get_success_url(self):
+        return reverse_lazy('tasks')
 
 
 class TaskList(ListView):
