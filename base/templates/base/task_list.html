@@ -4,7 +4,8 @@
 
     <div class="header-bar">
         <div>
-            <h1>안녕하세요. {{ request.user|title }}</h1>
+            <h1 style="margin-bottom: 3px;">안녕하세요.</h1>
+            <h2 style="margin-top: 0;">{{ request.user|title }}</h2>
             <h3 style="margin:0">
                 {% if count == 0 %}
                 작업을 추가해주세요.
@@ -23,13 +24,13 @@
         {% endif %}
     </div>
 
-
-{#    <a href="{% url 'task-create' %}">Add Task</a>#}
-{##}
-{#    <form method="GET">#}
-{#        <input type="text" name="search-area" value="{{ search_input }}"/>#}
-{#        <input type="submit" value="Search"/>#}
-{#    </form>#}
+    <div id="search-add-wrapper">
+        <form method="GET" style="margin-top: 20px; display: flex;">
+            <input type="text" name="search-area" value="{{ search_input }}"/>
+            <input class="button" type="submit" value="Search"/>
+        </form>
+        <a id="add-link" href="{% url 'task-create' %}">&#x2b;</a>
+    </div>
 
     <div class="task-items-wrapper">
         {% for task in tasks %}
@@ -49,7 +50,10 @@
             {% endif %}
         </div>
         {% empty %}
-            <h3>작업이 없습니다.</h3>
+            <div style="text-align: center; padding-bottom: 10px; line-height: 1em;">
+                <h3>현재 작업이 없습니다.</h3>
+                <h3>새로운 <a style="text-decoration: none; color: #e53935;" href="{% url 'task-create' %}">작업을</a> 생성해주세요! </h3>
+            </div>
         {% endfor %}
     </div>
 {% endblock content %}

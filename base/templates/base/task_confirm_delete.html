@@ -2,11 +2,17 @@
 
 {% block content %}
 
-<a href="{% url 'tasks' %}">Go Back</a>
-<form method="POST" action="">
-    {% csrf_token %}
-    <p>현재 작업을 삭제하실 건가요? "{{ task }}"</p>
-    <input type="submit" value="Delete"/>
-</form>
+<div class="header-bar">
+    <a class="header-bar-text" href="{% url 'tasks' %}">&#8592; Back</a>
+</div>
+
+<div class="card-body">
+    <form method="POST" action="">
+        {% csrf_token %}
+        <p style="font-size: 40px">현재 작업을 삭제하실 건가요?</p>
+        <p style="font-size: 30px">"{{ task }}"</p>
+        <input class="button" type="submit" value="Delete"/>
+    </form>
+</div>
 
 {% endblock content %}

@@ -2,14 +2,27 @@
 
 {% block content %}
 
-<h1>Register</h1>
+<div class="header-bar">
+    <h1>회원가입</h1>
+</div>
 
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Register">
-</form>
+<div class="card-body">
+    <form method="POST">
+        {% csrf_token %}
+        <label for="">{{ form.username.label }}</label>
+        {{ form.username }}
 
-<p>계정이 이미 있으신가요? <a href="{% url 'login' %}">로그인</a></p>
+        <label for="">{{ form.password1.label }}</label>
+        {{ form.password1 }}
+
+        <label for="">{{ form.password2.label }}</label>
+        {{ form.password2 }}
+        <input class="button" style="margin-top: 20px" type="submit" value="회원가입">
+    </form>
+
+    <p>계정이 이미 있으신가요? <a href="{% url 'login' %}">로그인</a></p>
+</div>
+
+
 
 {% endblock content %}
