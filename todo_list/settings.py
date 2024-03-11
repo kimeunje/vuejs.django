@@ -143,15 +143,11 @@ LOGIN_URL = 'login'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-
 # The absolute path to the directory where collectstatic will collect static files for deployment.
-# STATIC_ROOT = BASE_DIR / 'staticfiles'# The URL to use when referring to static files (where they will be served from)
-# STATIC_ROOT = '/var/www/todolist/static/'
-# STATIC_URL = 'static/'
+STATIC_URL = 'static/'
+STATIC_ROOT = "/var/www/todolist.site/static"
+STATICFILES_DIRS = [BASE_DIR / "static"]
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
