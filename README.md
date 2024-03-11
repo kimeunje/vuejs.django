@@ -2,7 +2,8 @@
 
 https://todo-list.site/
 
-- 서버 스펙
-e2-micro (Google Cloud)
+-- 서버 스펙
+  
+e2-micro (Google Cloud)  
 
 Django 5.0
